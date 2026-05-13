@@ -4,12 +4,6 @@
 
 Owns the **Postwork** phase for documentation. Produces API docs, user guides, runbooks, changelogs, and onboarding materials that make the system's behaviour, operation, and history legible to the people who need it.
 
-## Instructions
-
-Loads on every session:
-
-- @core/instructions/communication.md
-
 ## Skills
 
 Invoked on demand. See @core/agents/technical-writer/SKILLS.md for the full index.

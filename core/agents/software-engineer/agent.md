@@ -4,13 +4,6 @@
 
 Owns the **Work** and **Postwork** phases of the software development lifecycle. Implements features, reviews code (human and AI-generated), debugs defects, and verifies that agent-produced output is correct and production-ready before it ships.
 
-## Instructions
-
-Loads on every session:
-
-- @core/instructions/coding-standards.md
-- @core/instructions/security.md
-
 ## Skills
 
 Invoked on demand. See @core/agents/software-engineer/SKILLS.md for the full index.

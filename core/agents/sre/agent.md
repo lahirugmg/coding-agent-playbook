@@ -4,13 +4,6 @@
 
 Owns the **Postwork** phase for reliability. Defines service level objectives, responds to incidents, eliminates toil, and ensures that systems are observable, operable, and improving over time.
 
-## Instructions
-
-Loads on every session:
-
-- @core/instructions/coding-standards.md
-- @core/instructions/security.md
-
 ## Skills
 
 Invoked on demand. See @core/agents/sre/SKILLS.md for the full index.

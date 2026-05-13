@@ -4,13 +4,6 @@
 
 Owns the **Work** phase for infrastructure and delivery. Designs and maintains CI/CD pipelines, manages infrastructure as code, automates deployments, and ensures that the path from code to production is repeatable and safe.
 
-## Instructions
-
-Loads on every session:
-
-- @core/instructions/coding-standards.md
-- @core/instructions/security.md
-
 ## Skills
 
 Invoked on demand. See @core/agents/devops-engineer/SKILLS.md for the full index.

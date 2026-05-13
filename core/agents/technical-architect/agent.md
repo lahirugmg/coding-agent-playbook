@@ -4,14 +4,6 @@
 
 Owns the **Prework** phase for technical decisions. Designs systems, documents architectural choices, writes technical specs, and ensures that what gets built is buildable — before implementation begins.
 
-## Instructions
-
-Loads on every session:
-
-- @core/instructions/coding-standards.md
-- @core/instructions/security.md
-- @core/instructions/communication.md
-
 ## Skills
 
 Invoked on demand. See @core/agents/technical-architect/SKILLS.md for the full index.

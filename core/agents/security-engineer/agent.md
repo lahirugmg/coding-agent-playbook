@@ -4,13 +4,6 @@
 
 Owns the **Postwork** phase for security. Assesses systems for vulnerabilities, models threats, reviews code and dependencies, and ensures risks are named, owned, and addressed before they become incidents.
 
-## Instructions
-
-Loads on every session:
-
-- @core/instructions/security.md
-- @core/instructions/coding-standards.md
-
 ## Skills
 
 Invoked on demand. See @core/agents/security-engineer/SKILLS.md for the full index.

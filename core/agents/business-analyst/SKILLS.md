@@ -14,3 +14,11 @@ Skills are invoked on demand. Each skill file is self-contained and can be compo
 | sprint-planning | @core/skills/business-analyst/sprint-planning.md | Prepare and facilitate a sprint planning session |
 | estimation | @core/skills/business-analyst/estimation.md | Estimate effort or complexity for a backlog of work |
 | innovation-discovery | @core/skills/business-analyst/innovation-discovery.md | Explore unspoken needs and opportunities before a ticket exists |
+
+## Composite Skills
+
+Composite skills invoke other skills in sequence. Sub-skills are listed in execution order.
+
+| Skill | File | Sub-skills |
+|---|---|---|
+| requirements-to-prd | @core/skills/business-analyst/requirements-to-prd.md | requirements-gathering → user-story → prd-writing |

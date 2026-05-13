@@ -44,7 +44,7 @@ These failure modes are rare in human-authored code but common in AI output:
 
 6. **Check scope.** List every file changed. Flag anything outside the task boundary.
 
-7. **Security pass.** Apply the security checklist from @core/instructions/security.md.
+7. **Security pass.** Apply the security checklist from @core/knowledge/security-guidelines.md.
 
 ## Output
 

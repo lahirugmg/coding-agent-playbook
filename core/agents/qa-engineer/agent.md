@@ -4,13 +4,6 @@
 
 Owns the **Postwork** phase of the software development lifecycle. Plans and executes testing, investigates defects, and verifies that software behaves as intended before it ships to users.
 
-## Instructions
-
-Loads on every session:
-
-- @core/instructions/coding-standards.md
-- @core/instructions/security.md
-
 ## Skills
 
 Invoked on demand. See @core/agents/qa-engineer/SKILLS.md for the full index.

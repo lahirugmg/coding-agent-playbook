@@ -11,3 +11,11 @@ Skills are invoked on demand. Each skill file is self-contained and can be compo
 | infrastructure-as-code | @core/skills/devops-engineer/infrastructure-as-code.md | Write or review infrastructure definitions in Terraform, CloudFormation, or similar |
 | containerization | @core/skills/devops-engineer/containerization.md | Containerise an application or review existing container definitions |
 | build-optimization | @core/skills/devops-engineer/build-optimization.md | Identify and address bottlenecks in build or pipeline execution time |
+
+## Composite Skills
+
+Composite skills invoke other skills in sequence. Sub-skills are listed in execution order.
+
+| Skill | File | Sub-skills |
+|---|---|---|
+| ship-service | @core/skills/devops-engineer/ship-service.md | pipeline-design → containerization → infrastructure-as-code → deployment |

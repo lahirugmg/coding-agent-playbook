@@ -12,3 +12,11 @@ Skills are invoked on demand. Each skill file is self-contained and can be compo
 | onboarding-guide | @core/skills/technical-writer/onboarding-guide.md | Create onboarding documentation for a new engineer or user joining a system |
 | changelog | @core/skills/technical-writer/changelog.md | Write a structured changelog entry for a release or significant change |
 | stakeholder-trust | @core/skills/technical-writer/stakeholder-trust.md | Communicate outcomes and system changes to non-technical stakeholders after agent work ships |
+
+## Composite Skills
+
+Composite skills invoke other skills in sequence. Sub-skills are listed in execution order.
+
+| Skill | File | Sub-skills |
+|---|---|---|
+| document-release | @core/skills/technical-writer/document-release.md | api-docs → changelog → stakeholder-trust |

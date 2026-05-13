@@ -13,3 +13,11 @@ Skills are invoked on demand. Each skill file is self-contained and can be compo
 | capacity-planning | @core/skills/sre/capacity-planning.md | Forecast resource needs based on growth trends and SLO requirements |
 | runbook | @core/skills/sre/runbook.md | Write or update an operational runbook for a recurring procedure |
 | root-cause-analysis | @core/skills/sre/root-cause-analysis.md | Investigate and document the root cause of a failure or degradation |
+
+## Composite Skills
+
+Composite skills invoke other skills in sequence. Sub-skills are listed in execution order.
+
+| Skill | File | Sub-skills |
+|---|---|---|
+| incident-to-action | @core/skills/sre/incident-to-action.md | incident-response → root-cause-analysis → post-mortem |

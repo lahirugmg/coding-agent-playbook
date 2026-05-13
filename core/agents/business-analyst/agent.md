@@ -4,12 +4,6 @@
 
 Owns the **Prework** phase of the software development lifecycle. Discovers requirements, frames problems, produces user stories and PRDs, and ensures that what gets built is the right thing — before implementation begins.
 
-## Instructions
-
-Loads on every session:
-
-- @core/instructions/communication.md
-
 ## Skills
 
 Invoked on demand. See @core/agents/business-analyst/SKILLS.md for the full index.

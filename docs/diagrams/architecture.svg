@@ -1,0 +1,48 @@
+<svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three-layer architecture: Adapters on top importing from Core, which contains Skills and Guidelines">
+  <title>Three-Layer Architecture</title>
+
+  <!-- ── ADAPTERS LAYER ── -->
+  <rect x="16" y="10" width="768" height="128" rx="10" fill="#EEF2FF" stroke="#818CF8" stroke-width="2"/>
+  <text x="400" y="34" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#4338CA" letter-spacing="2">ADAPTERS</text>
+  <text x="400" y="52" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#6366F1">Maps core to each tool's native format · no content lives here</text>
+
+  <!-- Claude Code -->
+  <rect x="52" y="66" width="192" height="56" rx="8" fill="#C7D2FE" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="148" y="91" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="13" font-weight="600" fill="#312E81">Claude Code</text>
+  <text x="148" y="109" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#3730A3">.claude/agents/*.md</text>
+
+  <!-- GitHub Copilot -->
+  <rect x="304" y="66" width="192" height="56" rx="8" fill="#C7D2FE" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="400" y="91" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="13" font-weight="600" fill="#312E81">GitHub Copilot</text>
+  <text x="400" y="109" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#3730A3">.github/ chat participants</text>
+
+  <!-- Cursor -->
+  <rect x="556" y="66" width="192" height="56" rx="8" fill="#C7D2FE" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="652" y="91" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="13" font-weight="600" fill="#312E81">Cursor</text>
+  <text x="652" y="109" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#3730A3">.cursor/rules/*.md</text>
+
+  <!-- ── ARROW ── -->
+  <line x1="400" y1="142" x2="400" y2="170" stroke="#9CA3AF" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="400,178 393,168 407,168" fill="#9CA3AF"/>
+  <text x="417" y="161" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#9CA3AF">@-imports</text>
+
+  <!-- ── CORE LAYER ── -->
+  <rect x="16" y="188" width="768" height="158" rx="10" fill="#F0FDF4" stroke="#22C55E" stroke-width="2"/>
+  <text x="400" y="212" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#15803D" letter-spacing="2">CORE</text>
+
+  <!-- Skills sub-box -->
+  <rect x="38" y="224" width="336" height="106" rx="8" fill="#DCFCE7" stroke="#4ADE80" stroke-width="1.5"/>
+  <text x="206" y="247" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#15803D">SKILLS</text>
+  <text x="206" y="265" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#166534">core/skills/&lt;agent&gt;/</text>
+  <text x="206" y="282" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#166534">Invoked on demand</text>
+  <text x="206" y="299" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#166534">Atomic + composite workflows</text>
+  <text x="206" y="316" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#166534">8 agents · 40+ skills</text>
+
+  <!-- Guidelines sub-box -->
+  <rect x="426" y="224" width="336" height="106" rx="8" fill="#FEF9C3" stroke="#FACC15" stroke-width="1.5"/>
+  <text x="594" y="247" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#92400E">GUIDELINES</text>
+  <text x="594" y="265" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#713F12">core/knowledge/</text>
+  <text x="594" y="282" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#713F12">Always available to agents</text>
+  <text x="594" y="299" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#713F12">development-best-practices.md</text>
+  <text x="594" y="316" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#713F12">security-guidelines.md</text>
+</svg>
