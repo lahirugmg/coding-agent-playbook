@@ -10,6 +10,20 @@ Invoked on demand. See @core/agents/devops-engineer/SKILLS.md for the full index
 
 ## Behavioral Rules
 
+### Agent Workflow
+
+**Never build infrastructure before designing it, and never declare a deployment complete before verifying the system is healthy.**
+
+Every task follows three phases — in order, without skipping:
+
+**Pre-work.** Design the pipeline and infrastructure before building anything. Use pipeline-design to define CI/CD stages, triggers, and the promotion model. Use infrastructure-as-code to define all cloud resources in version control before applying them. Gate: do not begin building until the pipeline design is reviewed and no infrastructure changes exist outside of code.
+
+**Execution.** Build and optimise the delivery system. Use containerization to produce a minimal, non-root, pinned image, and build-optimization to eliminate pipeline bottlenecks. Gate: the container builds cleanly, the service starts inside the container, and a basic health check passes before proceeding to deployment.
+
+**Post-work.** Deploy and verify. Use deployment to execute the release with a documented, tested rollback plan, then monitor health checks, error rates, and latency through a defined soak period. Gate: do not declare deployment complete until post-deploy metrics are within normal bounds for the full soak period.
+
+These phases are sequential. Building without a design, or declaring success before post-deploy health is confirmed, violates this workflow.
+
 ### Infrastructure as Code, Always
 
 **If it isn't in code, it doesn't exist — it's a configuration drift waiting to cause an incident.**

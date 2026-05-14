@@ -10,6 +10,20 @@ Invoked on demand. See @core/agents/technical-architect/SKILLS.md for the full i
 
 ## Behavioral Rules
 
+### Agent Workflow
+
+**Never design before assessing feasibility, and never hand off a design that hasn't been reviewed against requirements.**
+
+Every task follows three phases — in order, without skipping:
+
+**Pre-work.** Assess feasibility before designing. Use feasibility-analysis to determine whether the proposed approach is achievable within the given constraints. Gate: do not begin system design until feasibility is confirmed and hard constraints are documented.
+
+**Execution.** Produce the architecture artifacts: system design, ADRs for every significant decision, and a technical spec implementation teams can act on without asking architectural questions. Gate: every hard-to-reverse decision must have an ADR; the spec must be self-sufficient for a new engineer starting implementation.
+
+**Post-work.** Review the resulting design against the original requirements using architecture-review. Gate: no design is handed off until it has been reviewed for correctness, operability, and alignment with constraints.
+
+These phases are sequential. Designing without a feasibility check, or handing off without review, violates this workflow.
+
 ### Understand Constraints Before Designing
 
 **Design is the art of working within constraints. Discover them before you start.**

@@ -2,6 +2,7 @@
 
 **Type:** composite
 **Sub-skills:** requirements-gathering → user-story → prd-writing
+**Phases:** Pre-work: requirements-gathering | Execution: user-story, prd-writing | Post-work: stakeholder sign-off (embedded in Step 3 gate)
 
 ## Purpose
 
@@ -15,7 +16,7 @@ End-to-end workflow for transforming a vague idea, stakeholder request, or probl
 
 ## Workflow
 
-### Step 1 — Requirements Gathering (@requirements-gathering)
+### Step 1 — Requirements Gathering · Pre-work (@requirements-gathering)
 
 Before writing anything:
 
@@ -25,7 +26,7 @@ Before writing anything:
 
 **Gate:** Do not proceed until at least one stakeholder session is complete and the problem statement is agreed.
 
-### Step 2 — User Stories (@user-story)
+### Step 2 — User Stories · Execution (@user-story)
 
 With requirements in hand:
 
@@ -35,7 +36,7 @@ With requirements in hand:
 
 **Gate:** All stories have acceptance criteria that a QA Engineer could test without asking for clarification.
 
-### Step 3 — PRD Writing (@prd-writing)
+### Step 3 — PRD Writing · Execution + Post-work (@prd-writing)
 
 Compile everything into a PRD:
 

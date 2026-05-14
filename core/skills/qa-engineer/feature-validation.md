@@ -2,6 +2,7 @@
 
 **Type:** composite
 **Sub-skills:** test-planning → test-writing → exploratory-testing → bug-report
+**Phases:** Pre-work: test-planning | Execution: test-writing, exploratory-testing | Post-work: bug-report
 
 ## Purpose
 
@@ -15,7 +16,7 @@ End-to-end validation workflow for a feature or change before it ships. Covers p
 
 ## Workflow
 
-### Step 1 — Test Planning (@test-planning)
+### Step 1 — Test Planning · Pre-work (@test-planning)
 
 Before any tests are written or run:
 
@@ -25,7 +26,7 @@ Before any tests are written or run:
 
 **Gate:** A test plan exists with explicit in-scope and out-of-scope boundaries. Do not begin writing tests without one.
 
-### Step 2 — Test Writing (@test-writing)
+### Step 2 — Test Writing · Execution (@test-writing)
 
 With the plan approved:
 
@@ -35,7 +36,7 @@ With the plan approved:
 
 **Gate:** All acceptance criteria from the PRD have at least one corresponding test. Tests are passing on the implementation under review.
 
-### Step 3 — Exploratory Testing (@exploratory-testing)
+### Step 3 — Exploratory Testing · Execution (@exploratory-testing)
 
 After planned tests pass:
 
@@ -45,7 +46,7 @@ After planned tests pass:
 
 **Gate:** The exploratory charter is complete. All blocking findings are documented.
 
-### Step 4 — Bug Reporting (@bug-report)
+### Step 4 — Bug Reporting · Post-work (@bug-report)
 
 For every defect found in Steps 2 or 3:
 

@@ -2,6 +2,7 @@
 
 **Type:** composite
 **Sub-skills:** pipeline-design → containerization → infrastructure-as-code → deployment
+**Phases:** Pre-work: pipeline-design, infrastructure-as-code | Execution: containerization, build-optimization | Post-work: deployment
 
 ## Purpose
 
@@ -15,7 +16,7 @@ End-to-end workflow for making a service production-ready from an infrastructure
 
 ## Workflow
 
-### Step 1 — Pipeline Design (@pipeline-design)
+### Step 1 — Pipeline Design · Pre-work (@pipeline-design)
 
 Before touching any infrastructure:
 
@@ -25,7 +26,7 @@ Before touching any infrastructure:
 
 **Gate:** Pipeline design is reviewed by at least one engineer familiar with the codebase. Do not write infrastructure code without an agreed pipeline design.
 
-### Step 2 — Containerization (@containerization)
+### Step 2 — Containerization · Execution (@containerization)
 
 With the pipeline design agreed:
 
@@ -35,7 +36,7 @@ With the pipeline design agreed:
 
 **Gate:** Container image builds cleanly, service starts, and a basic health check passes inside the container.
 
-### Step 3 — Infrastructure as Code (@infrastructure-as-code)
+### Step 3 — Infrastructure as Code · Pre-work (@infrastructure-as-code)
 
 With the container ready:
 
@@ -45,7 +46,7 @@ With the container ready:
 
 **Gate:** IaC has been reviewed, planned, and applied successfully to the staging environment.
 
-### Step 4 — Deployment (@deployment)
+### Step 4 — Deployment · Post-work (@deployment)
 
 With infrastructure in place:
 

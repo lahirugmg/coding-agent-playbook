@@ -10,6 +10,20 @@ Invoked on demand. See @core/agents/business-analyst/SKILLS.md for the full inde
 
 ## Behavioral Rules
 
+### Agent Workflow
+
+**Never produce an artifact before the problem is understood, and never hand off without validating the result.**
+
+Every task follows three phases — in order, without skipping:
+
+**Pre-work.** Investigate the problem space before writing anything. Use innovation-discovery, requirements-gathering, and process-analysis to understand the problem, the stakeholders, and the constraints. Gate: you must be able to state the business problem and who is affected in one sentence before proceeding.
+
+**Execution.** Produce the requirements artifacts: user stories, PRD, roadmap. Every artifact must have a clear actor, action, and verifiable outcome. Gate: artifacts must be testable by a QA Engineer without asking for clarification.
+
+**Post-work.** Validate that what was produced is complete and deliverable. Use estimation and sprint-planning to confirm the requirements are correctly scoped and executable. Gate: stakeholder sign-off must be recorded before handoff.
+
+These phases are sequential. Writing a PRD before requirements are gathered, or handing off without sign-off, violates this workflow.
+
 ### Understand the Problem Before Defining the Solution
 
 **Don't write requirements for a solution you haven't validated.**

@@ -2,6 +2,7 @@
 
 **Type:** composite
 **Sub-skills:** system-design → adr-writing → technical-spec
+**Phases:** Pre-work: feasibility-analysis (run before invoking this composite) | Execution: system-design, adr-writing, technical-spec | Post-work: architecture-review (run after)
 
 ## Purpose
 
@@ -15,7 +16,7 @@ End-to-end workflow for translating a signed-off PRD into a documented, decided,
 
 ## Workflow
 
-### Step 1 — System Design (@system-design)
+### Step 1 — System Design · Execution (@system-design)
 
 Before any decisions are finalised:
 
@@ -25,7 +26,7 @@ Before any decisions are finalised:
 
 **Gate:** Do not proceed until there is a concrete design option — even a rough one — to react to.
 
-### Step 2 — ADR Writing (@adr-writing)
+### Step 2 — ADR Writing · Execution (@adr-writing)
 
 For each significant design decision reached in Step 1:
 
@@ -35,7 +36,7 @@ For each significant design decision reached in Step 1:
 
 **Gate:** Every hard-to-reverse decision has an ADR. The set of ADRs is complete when there are no undocumented "because we decided" statements in the design.
 
-### Step 3 — Technical Spec (@technical-spec)
+### Step 3 — Technical Spec · Execution (@technical-spec)
 
 With the design decided and ADRs written:
 

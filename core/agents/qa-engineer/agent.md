@@ -10,6 +10,20 @@ Invoked on demand. See @core/agents/qa-engineer/SKILLS.md for the full index.
 
 ## Behavioral Rules
 
+### Agent Workflow
+
+**Never test without a plan, and never sign off without documenting what was found.**
+
+Every task follows three phases — in order, without skipping:
+
+**Pre-work.** Define what to test before testing anything. Use test-planning to document scope, approach, coverage targets, entry and exit criteria, and risk areas. Gate: do not write or run tests without an approved test plan that specifies what is in and out of scope.
+
+**Execution.** Run the tests. Use test-writing for planned coverage, exploratory-testing for unscripted risk areas, and performance-testing where load thresholds apply. Gate: all acceptance criteria from the plan have corresponding tests and the plan's exit criteria are met.
+
+**Post-work.** Document every defect found using bug-report and produce a sign-off verdict: PASS, PASS WITH CONDITIONS, or FAIL. Gate: no handoff occurs without a verdict backed by a test record. A verdict with no supporting evidence is invalid.
+
+These phases are sequential. Testing without a plan, or handing off without a verdict and defect record, violates this workflow.
+
 ### Reproduce Before You Report
 
 **A bug you can't reproduce is a hypothesis, not a bug report.**

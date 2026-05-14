@@ -20,45 +20,65 @@ Behavioral rules live inline in each agent's `agent.md`. Skills define what an a
 
 ## Agent Workflow
 
-Phase logic applies inside an individual agent workflow, not as a human-versus-AI operating model. A typical agent workflow has three steps: prepare the work, execute the change, and verify the result.
+Every agent — regardless of role — operates in three internal phases. This is not a hand-off model between humans and AI; it is the shape of a single agent's workflow, applied consistently across all eight roles.
 
-For a software engineer, that usually means clarifying scope, writing a spec or test-first plan, implementing the change, and then running tests and reviewing the output before it is considered done.
+| Phase | What happens |
+|---|---|
+| **Pre-work** | Clarify scope and gather inputs. Produce a plan, spec, threat model, or design before any primary deliverable is created. Gate: do not move to execution without a defined target. |
+| **Execution** | Produce the primary deliverable — code, architecture, tests, infrastructure, documentation — against the pre-work spec. |
+| **Post-work** | Verify the deliverable against the pre-work plan. Surface gaps, failures, or required follow-up before declaring the work done. |
 
-![Agent workflow: Preparation leads to Execution leads to Verification](docs/diagrams/phase-model.png)
+All eight agents follow this pattern. The specific skills differ by role:
+
+| Agent | Pre-work | Execution | Post-work |
+|---|---|---|---|
+| **Business Analyst** | innovation-discovery, requirements-gathering, process-analysis | user-story, prd-writing, roadmap | estimation, sprint-planning |
+| **Technical Architect** | feasibility-analysis | system-design, adr-writing, technical-spec | architecture-review |
+| **Software Engineer** | spec-writing, tech-debt | debugging, refactoring, migration, dependency-update | code-review, agent-output-review |
+| **QA Engineer** | test-planning | test-writing, performance-testing, exploratory-testing | bug-report |
+| **Security Engineer** | threat-modeling | security-audit, vulnerability-assessment, dependency-vulnerability | compliance-review |
+| **DevOps Engineer** | pipeline-design, infrastructure-as-code | containerization, build-optimization | deployment |
+| **SRE** | observability, alerting, capacity-planning, runbook | incident-response, root-cause-analysis | post-mortem |
+| **Technical Writer** | — | api-docs, user-guide, runbook-writing, onboarding-guide, changelog | stakeholder-trust |
+
+Each agent's composite skill is the canonical end-to-end workflow for its primary task, chaining pre-work through post-work in a single invocation.
+
+![Agent workflow: Preparation leads to Execution leads to Verification](docs/diagrams/phase-model.svg)
 
 ## Agents
 
 Eight agents cover the full software development lifecycle:
 
-| Agent | Skills |
-|---|---|
-| **Business Analyst** | requirements-gathering, user-story, prd-writing, process-analysis, roadmap, sprint-planning, estimation, innovation-discovery |
-| **Technical Architect** | system-design, architecture-review, adr-writing, technical-spec, feasibility-analysis |
-| **Software Engineer** | code-review, agent-output-review, debugging, refactoring, spec-writing, tech-debt, dependency-update, migration, intrapreneur-workflow |
-| **QA Engineer** | test-planning, test-writing, bug-report, performance-testing, exploratory-testing |
-| **Security Engineer** | security-audit, threat-modeling, vulnerability-assessment, dependency-vulnerability, compliance-review |
-| **DevOps Engineer** | pipeline-design, deployment, infrastructure-as-code, containerization, build-optimization |
-| **SRE** | observability, alerting, incident-response, post-mortem, capacity-planning, runbook, root-cause-analysis |
-| **Technical Writer** | api-docs, user-guide, runbook-writing, onboarding-guide, changelog, stakeholder-trust |
+| Agent | Composite Workflow | Pre-work | Execution | Post-work |
+|---|---|---|---|---|
+| **Business Analyst** | requirements-to-prd | innovation-discovery, requirements-gathering, process-analysis | user-story, prd-writing, roadmap | estimation, sprint-planning |
+| **Technical Architect** | design-and-document | feasibility-analysis | system-design, adr-writing, technical-spec | architecture-review |
+| **Software Engineer** | ship-feature, intrapreneur-workflow | spec-writing, tech-debt | debugging, refactoring, migration, dependency-update | code-review, agent-output-review |
+| **QA Engineer** | feature-validation | test-planning | test-writing, performance-testing, exploratory-testing | bug-report |
+| **Security Engineer** | security-review | threat-modeling | security-audit, vulnerability-assessment, dependency-vulnerability | compliance-review |
+| **DevOps Engineer** | ship-service | pipeline-design, infrastructure-as-code | containerization, build-optimization | deployment |
+| **SRE** | incident-to-action | observability, alerting, capacity-planning, runbook | incident-response, root-cause-analysis | post-mortem |
+| **Technical Writer** | document-release | — | api-docs, user-guide, runbook-writing, onboarding-guide, changelog | stakeholder-trust |
 
 Together the eight agents span the full SDLC: requirements → architecture → implementation → testing → security → deployment → operations → documentation. Each agent's behavioral rules are defined inline in its `agent.md`. Available skills are declared in the agent's `SKILLS.md` — a QA Engineer has no awareness of deployment skills, and vice versa.
 
-![SDLC agent coverage: eight agents from Business Analyst through Technical Writer](docs/diagrams/sdlc-flow.png)
+![SDLC agent coverage: eight agents from Business Analyst through Technical Writer](docs/diagrams/sdlc-flow.svg)
 
 ## Skill Hierarchy
 
-Skills are either **atomic** (single responsibility) or **composite** (invoke other skills):
+Skills are either **atomic** (single responsibility, maps to one phase) or **composite** (chain multiple atomic skills across phases):
 
 ```
 core/skills/software-engineer/
-  code-review.md          ← atomic: reviews human-authored code against standards
-  agent-output-review.md  ← atomic: verifies AI-generated code for drift, logic gaps, missing edge cases
-  debugging.md            ← atomic: diagnoses and fixes a specific bug
-  ship-feature.md         ← composite: spec-writing → code-review → testing
-  intrapreneur-workflow.md ← composite: innovation-discovery → spec-writing → build → agent-output-review → stakeholder-trust
+  spec-writing.md         ← atomic / pre-work: produces the implementation spec before coding begins
+  code-review.md          ← atomic / post-work: reviews human-authored code against standards
+  agent-output-review.md  ← atomic / post-work: verifies AI-generated code for drift, logic gaps, missing edge cases
+  debugging.md            ← atomic / execution: diagnoses and fixes a specific bug
+  ship-feature.md         ← composite: spec-writing (pre-work) → implementation (execution) → code-review (post-work)
+  intrapreneur-workflow.md ← composite: innovation-discovery (pre-work) → spec-writing → build → agent-output-review (post-work) → stakeholder communication
 ```
 
-Composite skills reference sub-skills in sequence. Atomic skills stay self-contained and are reused by composites without duplication. This hierarchy means complex workflows are built by composition, not by writing monolithic prompts.
+Atomic skills map to a specific phase — pre-work, execution, or post-work. Composite skills chain atomic skills across phases to form a complete workflow. Building new workflows means composing existing atomics, not writing new monolithic prompts.
 
 ## Adapters
 

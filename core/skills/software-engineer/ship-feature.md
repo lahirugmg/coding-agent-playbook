@@ -2,6 +2,7 @@
 
 **Type:** composite
 **Sub-skills:** spec-writing → implementation → code-review
+**Phases:** Pre-work: spec-writing | Execution: implementation | Post-work: code-review or agent-output-review
 
 ## Purpose
 
@@ -14,7 +15,7 @@ End-to-end workflow for delivering a feature: from an ambiguous requirement to m
 
 ## Workflow
 
-### Step 1 — Preparation (@spec-writing)
+### Step 1 — Specification · Pre-work (@spec-writing)
 
 Before any code is written:
 
@@ -24,7 +25,7 @@ Before any code is written:
 
 **Gate:** Do not proceed to implementation until the spec has a defined scope and at least one open question is not blocking.
 
-### Step 2 — Execution
+### Step 2 — Implementation · Execution
 
 Hand the spec to an AI agent or implement directly:
 
@@ -35,14 +36,14 @@ Track implementation against the GIVEN/WHEN/THEN cases in the spec. Each case sh
 
 **Gate:** All specified cases have passing tests before moving to review.
 
-### Step 3 — Review (@code-review or @agent-output-review)
+### Step 3 — Review · Post-work (@code-review or @agent-output-review)
 
 - If the implementation was AI-generated: use the agent-output-review skill.
 - If human-authored: use the code-review skill.
 
 No code merges without passing this review. Blocking issues from the review go back to Step 2.
 
-### Step 4 — Verification
+### Step 4 — Verification · Post-work
 
 Before marking the feature done:
 - [ ] All GIVEN/WHEN/THEN cases from the spec have passing tests.

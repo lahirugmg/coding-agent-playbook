@@ -10,6 +10,20 @@ Invoked on demand. See @core/agents/software-engineer/SKILLS.md for the full ind
 
 ## Behavioral Rules
 
+### Agent Workflow
+
+**Never write code before writing a spec, and never merge before reviewing the output.**
+
+Every task follows three phases — in order, without skipping:
+
+**Pre-work.** Write a spec before any implementation begins. Use spec-writing to define the problem, scope, GIVEN/WHEN/THEN cases, and interface contract. Gate: do not write code until the spec has a defined scope and at least one acceptance criterion that can be independently tested.
+
+**Execution.** Implement against the spec, case by case. Every spec case must have a corresponding test. Do not add behaviour not in the spec. Gate: all specified cases have passing tests before moving to review.
+
+**Post-work.** Review the output before merge. Use code-review for human-authored code, agent-output-review for AI-generated code. Gate: no code merges without passing review; blocking issues return to execution.
+
+These phases are sequential. Implementing without a spec, or merging without review, violates this workflow.
+
 ### Think Before Coding
 
 Don't assume. Don't hide confusion. Surface tradeoffs.

@@ -23,6 +23,8 @@ When making changes, enforce these invariants:
 3. **Atomic skills have one responsibility.** If a skill file orchestrates other skills, it is composite and must say so explicitly.
 4. **`core/knowledge/` has two files only**: `development-best-practices.md` and `security-guidelines.md`. Do not add more without a strong reason — thin pointer files belong in the adapter's Knowledge Access section, not here.
 5. **Per-agent files must stay in sync.** If you add a skill, add it to `SKILLS.md`.
+6. **Every agent must have an Agent Workflow behavioral rule.** It must be the first rule in `## Behavioral Rules`, must define pre-work, execution, and post-work phases for that role, and must include a gate condition for each phase transition.
+7. **SKILLS.md files are organised by phase.** Skills are listed under Pre-work, Execution, or Post-work headings — not just as a flat list. Composite skills are listed separately under Composite Workflows.
 
 ## Structure
 
@@ -82,9 +84,25 @@ Invoked on demand. See @core/agents/<agent>/SKILLS.md.
 
 ## Behavioral Rules
 
+### Agent Workflow
+
+**<one-line gate summary for this role>**
+
+Every task follows three phases — in order, without skipping:
+
+**Pre-work.** <what the agent does before producing any primary artifact>. Gate: <condition that must be true before execution begins>.
+
+**Execution.** <what the agent produces>. Gate: <condition that must be true before post-work begins>.
+
+**Post-work.** <how the agent verifies and signs off>. Gate: <condition that must be true before handoff>.
+
+These phases are sequential. <Specific violation example for this role> violates this workflow.
+
 ### Rule Name
 <prose rules>
 ```
+
+The `### Agent Workflow` rule must always be the first rule in `## Behavioral Rules`. It is required in every agent — not optional. The gate statements are enforced constraints, not suggestions.
 
 ## Adapter File Format (adapters/claude/)
 
@@ -127,14 +145,16 @@ Body: `@core/agents/<agent>/agent.md` import, plus Skill Loading and Knowledge A
 
 **Add a new skill to an existing agent:**
 1. Create `core/skills/<agent>/<skill>.md` following the skill format above.
-2. Add a row to `core/agents/<agent>/SKILLS.md`.
-3. If it's a composite skill, declare which sub-skills it invokes in the file.
+2. Add a row to `core/agents/<agent>/SKILLS.md` under the correct phase heading (Pre-work, Execution, or Post-work).
+3. If it's a composite skill, declare which sub-skills it invokes and add a `**Phases:**` line identifying which phase each sub-skill belongs to.
 
 **Add a new agent:**
 1. Create `core/agents/<agent>/agent.md` and `SKILLS.md`.
-2. Create `core/skills/<agent>/` directory and at minimum one skill file.
+   - `agent.md` must have `### Agent Workflow` as the first behavioral rule, with gate conditions for each phase.
+   - `SKILLS.md` must organise skills under Pre-work, Execution, Post-work, and Composite Workflows headings.
+2. Create `core/skills/<agent>/` directory and at minimum one skill per phase (pre-work, execution, post-work) and one composite workflow skill.
 3. Create `adapters/claude/<agent>.md` with YAML frontmatter and @-imports.
-4. Add the agent to the Agents table in `README.md`.
+4. Add the agent to the Agents table in `README.md` with its composite workflow and phase breakdown.
 
 **Update a behavioral rule:**
 1. Edit `core/agents/<agent>/agent.md`.
@@ -149,3 +169,5 @@ Body: `@core/agents/<agent>/agent.md` import, plus Skill Loading and Knowledge A
 - Do not put skill content inside `agent.md` — agent.md has pointers, skills have content.
 - Do not create adapter files with content that diverges from their `core/` imports.
 - Do not edit `SKILLS.md` without checking the corresponding skill files exist.
+- Do not add a behavioral rule to `agent.md` before the `### Agent Workflow` rule — it must always be first.
+- Do not create a new agent without skills covering all three phases and a composite workflow skill.

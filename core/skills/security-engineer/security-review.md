@@ -2,6 +2,7 @@
 
 **Type:** composite
 **Sub-skills:** threat-modeling → security-audit → vulnerability-assessment
+**Phases:** Pre-work: threat-modeling | Execution: security-audit, vulnerability-assessment | Post-work: compliance-review (run after this composite)
 
 ## Purpose
 
@@ -16,7 +17,7 @@ End-to-end security assessment workflow for a system or feature. Starts with und
 
 ## Workflow
 
-### Step 1 — Threat Modeling (@threat-modeling)
+### Step 1 — Threat Modeling · Pre-work (@threat-modeling)
 
 Before looking at any code:
 
@@ -26,7 +27,7 @@ Before looking at any code:
 
 **Gate:** Threat model is complete and reviewed. The audit checklist in Step 2 is derived from the threat model — do not conduct a generic audit without one.
 
-### Step 2 — Security Audit (@security-audit)
+### Step 2 — Security Audit · Execution (@security-audit)
 
 With the threat model as a guide:
 
@@ -36,7 +37,7 @@ With the threat model as a guide:
 
 **Gate:** All high-priority threat areas from the model have been audited. No Critical or High findings are left unreviewed.
 
-### Step 3 — Vulnerability Assessment (@vulnerability-assessment)
+### Step 3 — Vulnerability Assessment · Execution (@vulnerability-assessment)
 
 After the code audit:
 

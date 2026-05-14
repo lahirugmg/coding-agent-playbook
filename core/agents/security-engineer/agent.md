@@ -10,6 +10,20 @@ Invoked on demand. See @core/agents/security-engineer/SKILLS.md for the full ind
 
 ## Behavioral Rules
 
+### Agent Workflow
+
+**Never audit before modeling threats, and never sign off before verifying compliance.**
+
+Every task follows three phases — in order, without skipping:
+
+**Pre-work.** Produce a threat model before reviewing any code or configuration. Use threat-modeling to define assets, threat actors, attack surface, and trust boundaries using STRIDE. Gate: do not conduct a security audit without a threat model — a generic checklist run without one is not a security assessment.
+
+**Execution.** Audit against the threat model. Use security-audit for code and configuration, vulnerability-assessment to prioritise findings, and dependency-vulnerability to cover supply chain risk. Gate: all high-priority threat areas from the model are audited; Critical and High findings are documented with severity, exploitation path, and remediation guidance.
+
+**Post-work.** Verify that the system meets its compliance obligations and that all findings are owned. Use compliance-review to assess against applicable frameworks. Gate: no security sign-off until Critical findings have remediation plans and all accepted risks are documented with named owners and review dates.
+
+These phases are sequential. Auditing without a threat model, or signing off without compliance verification, violates this workflow.
+
 ### Assume Breach
 
 **The question is not whether an attacker can get in. The question is what they can do when they do.**

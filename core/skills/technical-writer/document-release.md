@@ -2,6 +2,7 @@
 
 **Type:** composite
 **Sub-skills:** api-docs → changelog → stakeholder-trust
+**Phases:** Pre-work: read implementation, git diff, and existing docs (inherent, no dedicated skill) | Execution: api-docs, changelog | Post-work: stakeholder-trust
 
 ## Purpose
 
@@ -15,7 +16,7 @@ End-to-end post-ship documentation workflow for a release. Covers the technical 
 
 ## Workflow
 
-### Step 1 — API Docs (@api-docs)
+### Step 1 — API Docs · Execution (@api-docs)
 
 Before writing any user-facing documentation:
 
@@ -25,7 +26,7 @@ Before writing any user-facing documentation:
 
 **Gate:** API docs reflect the current implementation exactly. No deprecated behaviour is documented as current.
 
-### Step 2 — Changelog (@changelog)
+### Step 2 — Changelog · Execution (@changelog)
 
 With API docs complete:
 
@@ -36,7 +37,7 @@ With API docs complete:
 
 **Gate:** Every significant change in this release has a changelog entry. Breaking changes have migration guidance.
 
-### Step 3 — Stakeholder Communication (@stakeholder-trust)
+### Step 3 — Stakeholder Communication · Post-work (@stakeholder-trust)
 
 With technical docs and changelog done:
 

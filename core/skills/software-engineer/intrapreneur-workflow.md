@@ -2,6 +2,7 @@
 
 **Type:** composite
 **Sub-skills:** discovery → spec-writing → build (ship-feature) → agent-output-review → stakeholder communication
+**Phases:** Pre-work: discovery, spec-writing | Execution: build (ship-feature) | Post-work: agent-output-review, stakeholder communication
 
 ## Purpose
 
@@ -17,7 +18,7 @@ This skill is for changes where the engineer identifies the problem, builds the 
 
 ## Workflow
 
-### Phase 1 — Discovery
+### Phase 1 — Discovery · Pre-work
 
 Before writing a line of code or a line of spec:
 
@@ -31,7 +32,7 @@ Before writing a line of code or a line of spec:
 
 **Gate:** Can you state the problem, its measurable impact, and a proposed fix in three sentences? If not, keep discovering.
 
-### Phase 2 — Spec (@spec-writing)
+### Phase 2 — Spec · Pre-work (@spec-writing)
 
 Write a lightweight spec:
 - Problem statement (one paragraph)
@@ -46,7 +47,7 @@ Share the spec with one or two colleagues before building. The goal is to surfac
 
 **Gate:** One technical peer has reviewed the spec and has no blocking objections.
 
-### Phase 3 — Build (@ship-feature)
+### Phase 3 — Build · Execution (@ship-feature)
 
 Follow the ship-feature workflow:
 - Implement against the spec.
@@ -55,11 +56,11 @@ Follow the ship-feature workflow:
 
 Keep the PR small. A focused change ships faster, reviews easier, and rolls back cleanly.
 
-### Phase 4 — Agent Output Review (@agent-output-review)
+### Phase 4 — Agent Output Review · Post-work (@agent-output-review)
 
 If AI agents produced any of the implementation, apply agent-output-review before the PR is merged. Do not skip this step — intrapreneur work often has lighter oversight than ticket-driven work, which makes the review more important, not less.
 
-### Phase 5 — Stakeholder Communication
+### Phase 5 — Stakeholder Communication · Post-work
 
 After the change ships:
 

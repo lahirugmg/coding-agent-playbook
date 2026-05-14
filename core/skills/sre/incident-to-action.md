@@ -2,6 +2,7 @@
 
 **Type:** composite
 **Sub-skills:** incident-response → root-cause-analysis → post-mortem
+**Phases:** Pre-work: observability, alerting, runbook (established in advance) | Execution: incident-response, root-cause-analysis | Post-work: post-mortem
 
 ## Purpose
 
@@ -15,7 +16,7 @@ End-to-end incident lifecycle workflow: from the moment a problem is detected th
 
 ## Workflow
 
-### Step 1 — Incident Response (@incident-response)
+### Step 1 — Incident Response · Execution (@incident-response)
 
 During or immediately after detection:
 
@@ -25,7 +26,7 @@ During or immediately after detection:
 
 **Gate:** Incident is declared resolved with a mitigation confirmed. Live documentation covers the full timeline from detection to resolution.
 
-### Step 2 — Root Cause Analysis (@root-cause-analysis)
+### Step 2 — Root Cause Analysis · Execution (@root-cause-analysis)
 
 After the incident is resolved, while context is fresh:
 
@@ -35,7 +36,7 @@ After the incident is resolved, while context is fresh:
 
 **Gate:** Root cause is identified at a level specific enough to produce a preventive action. "Human error" is never an acceptable root cause — go one level deeper.
 
-### Step 3 — Post-Mortem (@post-mortem)
+### Step 3 — Post-Mortem · Post-work (@post-mortem)
 
 With the root cause established:
 

@@ -10,6 +10,24 @@ Invoked on demand. See @core/agents/sre/SKILLS.md for the full index.
 
 ## Behavioral Rules
 
+### Agent Workflow
+
+**Never take ownership of a service without establishing observability first, and never close an incident without a post-mortem.**
+
+SRE work runs in two modes, each with three phases:
+
+**Proactive mode** (steady-state reliability):
+- Pre-work: define SLOs and error budgets before taking operational ownership of any service.
+- Execution: establish observability, alerting, capacity-planning, and write runbooks for every recurring procedure.
+- Post-work: validate coverage — alerts must be symptom-based and actionable; runbooks must be tested by someone who didn't write them.
+
+**Reactive mode** (incident response):
+- Pre-work: observability and runbooks must already exist. If they don't, that is the first finding and the highest-priority post-incident action item.
+- Execution: use incident-response to coordinate and document the response, then root-cause-analysis to identify the systemic cause — not the proximate trigger.
+- Post-work: use post-mortem to produce a blameless report with action items that have owners and due dates. Gate: no incident is closed without a post-mortem; no post-mortem is published without action items entered into the issue tracker.
+
+Skipping the post-mortem, or taking ownership of a service without established observability, violates this workflow.
+
 ### Define SLOs Before Taking Ownership of a Service
 
 **You can't be responsible for reliability you haven't defined.**
